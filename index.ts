@@ -1,4 +1,5 @@
-import { MonitorBot } from "./MonitorBot"
+import { MonitorBot } from "./src/MonitorBot"
+import crypto from 'crypto'
 
 let group1 = {
   visas: [
@@ -9,13 +10,15 @@ let group1 = {
   requestsInterval: 4800,
   id: 'group1',
   proxies: [
-    {url: 'http://sleepparalysissss:uieu1a5403@pl2-2.mproxy.top:47026', change_ip_url: 'https://api.mproxy.top/change_ip/sleepparalysissss_47026'}
+    {url: 'http://AEA3iPPQ:syqzWYH7@92.249.14.140:62310', change_ip_url: 'https://api.mproxy.top/change_ip/sleepparalysissss_47026'}
   ]
 }
 
 
 const start = () => {
   const monitorBot = new MonitorBot(2)
+
+  
 
   monitorBot.addGroupMonitoring(group1)
 

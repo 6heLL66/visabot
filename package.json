@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "start": "npx tsx ./src/index.ts"
+    "start": "npx tsx index.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "crypto": "^1.0.1",
     "http2-wrapper": "^2.2.1",
     "node-telegram-bot-api": "^0.65.1",
     "pg": "^8.11.4",

@@ -24,7 +24,7 @@ export const requester = <T extends Record<string, string>>({
   return new Promise((res, rej) => {
     const headers: IncomingHttpHeaders = {
       ...base_headers,
-      'content-length': JSON.stringify(data).length,
+      'content-length': JSON.stringify(data).length as  unknown as string,
     }
 
     if (token) {

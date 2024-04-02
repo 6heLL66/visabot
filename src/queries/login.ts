@@ -4,7 +4,6 @@ import { requester } from './requester'
 export type CheckIsSlotAvailableRequestPayload = {
   username: string
   password: string
-  languageCode: string
   captcha_api_key: string
   captcha_version: string
   countrycode: string
@@ -15,7 +14,7 @@ export const login = async ({
   data,
   agent,
 }: {
-  data: Omit<CheckIsSlotAvailableRequestPayload, 'countrycode' | 'missioncode' | 'captcha_version' | 'languageCode'>
+  data: Omit<CheckIsSlotAvailableRequestPayload, 'countrycode' | 'missioncode' | 'captcha_version'>
   agent: http2.proxies.Http2OverHttps
 }) => {
   return requester<CheckIsSlotAvailableRequestPayload>({
@@ -24,7 +23,6 @@ export const login = async ({
       ...data,
       countrycode: 'blr',
       missioncode: 'pol',
-      languageCode: 'ru-RU',
       captcha_version: 'v2',
     },
     agent,

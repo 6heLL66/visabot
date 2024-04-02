@@ -13,7 +13,6 @@ const client = new pg.Client({
   password: '1gxPSYKG0phk',
   port: 5432,
   ssl: {
-    require: true,
     rejectUnauthorized: false,
   }
 })
@@ -102,12 +101,12 @@ export class MonitorBot {
       throw Error('Group not found')
     }
 
-    await this.auth('sseniknik@gmail.com', 'IKz941xiGsS8ABTi7YJvKEaSZB2BSiUo5La1z 9XvtPGFRPiW2tLDFoAGs6W6euJHqOQ35IN845ROmT2L8rUN7oSbY2RLRgJ92Nl3taaSn2uNN0b2jzHrcwgXUz8MNVG5b32mbsbbILhQae6a38wAWsz9iEccfj76PW6J542ISs=', '0.RTOdeN7EMh4zAcBYomkFkLJe90ZX5LN3pb0YBP2KOMFy-LW1cnh2vAwVhS2iR2pJzwkC29XpB9M2pQr0hEaaScYtoCG90CDYxLpCd6Dd7f3nOIrqEK2Yx31v1C2gXi_8QonH3i2sqFBChaeDsiBswNTfZf6tchLUaIiIehgJ5TG1ULbJFIK3JDKV7B_xzUvpCuyxzyWHvL0dQBUC24KfXagEHMvdrcQVw_YcUE_-PXY7PnKFb1zKXpnl3HmZVxcNCTeO6gK4-JbbBG466wXaGc9D5JwLBx-60GHoTCGb8uxqSu9bk1rclX8oqAwK4SigEIfhP2R9NtO2roQbr8U4YHW4vOoC_CjD2NVBotdijadYrP32bTqO_R-WoXZRPEXJf59cfVlYeoaJNxofn2kES5D-H_DpMlK-zhNVi-jnK5tnuxvl7Uzb8SKfAcqaPxeo.-sVhwYVs26GXqIrs367C7A.3b7637b66db73f20ebbd7842b063e9d93716a33cf2369600c6e5b824fd5b97a8')
-    return;
-
     const proxy = group?.proxies.sort((a, b) => this.proxyExpired[b.url] - this.proxyExpired[a.url])[0]
 
     this.setAgent(groupId, proxy)
+
+    await this.auth('wbefuq@mailto.plus', 'Qf5TiYh377pkp1B9QNXe7nPhJYGhwNSEUXO864LvoNCn0FPqG4DSj4V8wIetOiOipydyMDYIYooqVLKuhEnWp6s9uofIkjRHF6Cqn/ZkbmwuW9DShOZJDNuYB9jevLLNzs/CiTSiBIQVoEIt+G4jMussOHlJG+kdgcb3TPxZ6BI=', 'fjbrngekngekmkl')
+    return;
 
     const timeMark = Date.now()
 
@@ -152,6 +151,7 @@ export class MonitorBot {
   }
 
   public auth = async (username, password, captcha_api_key) => {
+    console.log(this.agents)
     const response = await login({ data: {username, password, captcha_api_key}, agent: Object.values(this.agents)[0]})
 
     this.log(response)
